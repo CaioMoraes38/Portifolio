@@ -23,14 +23,14 @@
     <main id="inicio" class="cabecalho">
         <img src="img/imgMacaco.webp" alt="Caio de Moraes Santos" class="foto-perfil"></img>
         <h1>Caio de Moraes Santos</h1>
-        <h2 class="cabecalho-subtitulo">Full Stack</h2>
+        <h2 class="cabecalho-subtitulo">Estudante de Engenharia de Computação | Foco em Front-End com React e TS | Python, Dash, PyScript, Vue.js</h2>
     </main>
     <section class="sobre" id="sobre">
         <h2 class="sobre-titulo">Sobre Mim</h2>
         <div class="sobre-caixa">
-            <p class="sobre-paragrafo">Olá! Meu nome é Caio de Moraes Santos, sou um desenvolvedor Full Stack apaixonado
-                por tecnologia e inovação. Tenho experiência em diversas linguagens de programação e estou sempre em
-                busca de novos desafios.</p>
+            <p class="sobre-paragrafo">Sou estudante de Engenharia de Computação no IFSP – Câmpus Birigui, apaixonado por tecnologia, interfaces intuitivas e soluções inteligentes. Estou me especializando em desenvolvimento web com foco em Front-End, utilizando tecnologias como React, TypeScript e Vue.js. No back-end e na criação de interfaces dinâmicas, também exploro o poder do Python com Dash e PyScript.
+
+Atualmente, estou desenvolvendo projetos próprios e acadêmicos, buscando aplicar na prática os conhecimentos adquiridos na graduação. Acredito na importância do aprendizado contínuo, da colaboração e na construção de soluções que realmente façam a diferença.</p>
         </div>
     </section>
     <section class="projetos" id="projetos">
@@ -50,7 +50,7 @@
                     <h3 class="inf-projetos">Projeto 1</h3>
                     <p class="paragrafo-projetos">Descrição do projeto 1. Um projeto incrível que faz coisas incríveis.
                     </p>
-                    
+
                 </div>
             </div>
             <div class="projetos-card">
@@ -65,16 +65,33 @@
     </section>
     <section class="contato" id="contato">
         <h2 class="contato-titulo">Contato</h2>
-        <form class="formulario" id="formulario">
+        <form class="formulario" id="formulario" onsubmit="enviarWhatsApp(event)">
             <div class="grupo-formulario">
-                <input type="text" id="nome" name="nome" placeholder="Seu Nome" required class="campo-formulario"></input>
+                <input type="text" id="nome" name="nome" placeholder="Seu Nome" required
+                    class="campo-formulario"></input>
             </div>
             <div class="grupo-formulario">
-                <textarea id="mensagem" name="mensagem" placeholder="Sua Mensagem" required
-                    class="campo-formulario"></textarea>
+                <textarea id="mensagem" name="mensagem" placeholder="Sua Mensagem" required class="campo-formulario"
+                    rows="6"></textarea>
             </div>
             <button class="bottun-whatsApp" type="submit" class="botao-enviar">Enviar WhatsApp</button>
         </form>
+        <script>
+            function enviarWhatsApp(event) {
+                event.preventDefault();
+                const nomeInput = document.getElementById('nome').value;
+                const mensagemInput = document.getElementById('mensagem').value;
+                const telefone = '5515991026494';
+
+                const texto = `Olá, meu nome é ${nomeInput.value},${mensagemInput.value}`;
+                const msgFormatada = encodeURIComponent(texto);
+                const url = `https://wa.link/wdla4a?text=${msgFormatada}`;
+                console.log(url);
+            
+                window.open(url, '_blank');
+            }
+
+        </script>
 </body>
 
 </html>

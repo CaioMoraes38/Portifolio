@@ -8,18 +8,22 @@ html{
     scroll-behavior: smooth;
 }
 :root{
-    --primaria: rgba(15, 23, 42, 0.8);
-    --secundaria:#6c757d;
+    --primaria:rgb(33, 33, 33);
+    --secundaria:rgb(50, 50, 50);
+    --terciaria:rgb(13, 115, 119);
+    --quaternaria:rgb(20, 255, 236);
+    --corFontes:rgb(251, 228, 214)
+
    
 }
 body{
-    background-color: var(--primaria);
-    color:var(--secundaria)
+    background: var(--secundaria);
+    color: var(--corFontes);
 }
 .navegacao{
     position: fixed;
     top: 0;
-    background: rgba(15, 23, 42, 0.8);
+    background: var(--primaria);
     width: 100%;
     z-index: 100;
     padding: 1.5rem;
@@ -30,11 +34,14 @@ body{
     gap:3rem;
     justify-content: center;   
     list-style: none;
+    font-size: 1rem;
+    font-weight: bold;
+
 
 }
 .menu-link{
     text-decoration: none;
-    color: var(--secundaria);
+    color: var(--corFontes);
     font-weight:500;
     position: relative;
     padding: 0.5rem 0;
@@ -47,7 +54,7 @@ body{
     position: absolute;
     bottom: 0;
     left: 0;
-    background: yellow;
+    background: var(--terciaria);
 }
 .menu-link:hover::after{
     width: 100%;
@@ -59,18 +66,20 @@ body{
     justify-content: center;
     align-items: center;
     flex-direction: column;
+    font-weight: 'bold';
 }
 .foto-perfil{
-    width: 150px;
-    height: 150px;
-    border-radius: 3%;
+    width: 300px;
+    height: 300px;
+    border-radius: 100%;
     margin: 0 auto;
     display: block;
+    animation: flutuar 3s ease-in-out infinite;
 
 }
 h1{
     font-size: 3.5rem;
-    color: #000;
+    color: var(--corFontes);
     margin-top: 1rem;
     text-align: center;
     font-weight: 'bold';
@@ -78,23 +87,24 @@ h1{
 }
 .cabecalho-subtitulo{
     font-size: 1.5rem;
-    color:red;
+    color: var(--corFontes);
     text-align: center;
     font-weight: 'bold';
     margin:10px;
 }
 .sobre{
-    padding: 6rem 2rem;
+    padding: 1.5rem ;
 
 }
 .sobre-titulo{
     font-size: 3rem;
-    color: green;
+    color: var(--corFontes);
     text-align: center;
+    margin-bottom: 30px;
     
 }
 .sobre-caixa{
-    padding: 2rem;
+    padding: 3rem;
     max-width: 800px;
     margin: 0 auto;
     border-radius: 10px;
@@ -103,8 +113,8 @@ h1{
     background: rgba(255, 255, 255, 0.1);
 }
 .sobre-paragrafo{
-    text-align: center;
-    font-size: 1.5rem;
+    
+    font-size: 1.2rem;
 
 }
 .projetos{
@@ -215,7 +225,16 @@ h1{
     width: 100%;
     height: 100%;
     z-index: -1;
-     background:radial-gradient(circle at 10% 20%, rgba(13, 13, 91, 0.912)0%, transparent 20%),
-    radial-gradient(circle at 90% 80%, rgba(130, 5, 24, 0.659) 0%, transparent 20%),red
+     background:radial-gradient(circle at 10% 20%, rgba(226, 226, 232, 0.912)0%, transparent 20%),
+    radial-gradient(circle at 90% 80%, rgba(37, 203, 98, 0.385) 0%, transparent 20%)
+
+}
+@keyframes flutuar{
+    0%, 100%{
+        transform: translateY(0);
+    }
+    40%{
+        transform: translateY(-10px);
+    }
 
 }
